@@ -78,7 +78,7 @@ const Booking = () => {
     return (
         <>
 
-            <h2 className='title'>Book the slot for you car in a click!! </h2>
+            <h2 className='title'>Book the slot for you car in a click!!hahaha </h2>
             <div className='main'>
 
 
