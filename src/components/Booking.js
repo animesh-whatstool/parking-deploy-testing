@@ -22,7 +22,7 @@ const Booking = () => {
         const isAllBooked = async () => {
 
             //If min 1 slot is available
-            let bookingData = await axios.get(`https://vehicle-park.herokuapp.com/current-slots`)
+            let bookingData = await axios.get(`https://repulsive-bell-bottoms-fawn.cyclic.app/current-slots`)
             if (bookingData['data']['slots']['Available_Slots'] > 0) {
                 setAvailable(true)
                 setUnavailable(false)
@@ -30,7 +30,7 @@ const Booking = () => {
             } else {
 
                 //If no slots available
-                let min_waiting_time = await axios.get(`https://vehicle-park.herokuapp.com/min-waiting-time`)
+                let min_waiting_time = await axios.get(`https://repulsive-bell-bottoms-fawn.cyclic.app/min-waiting-time`)
                 setWaitingTime(min_waiting_time['data']['data']['your_min_waiting_time'])
                 setEarliestSlot(min_waiting_time['data']['data']['slot_id_will'])
                 setAvailable(false)
@@ -47,7 +47,7 @@ const Booking = () => {
     //Fetching all slots data
     const getSlots = async () => {
 
-        let res = await axios.get(`https://vehicle-park.herokuapp.com/get-slots`)
+        let res = await axios.get(`https://repulsive-bell-bottoms-fawn.cyclic.app/get-slots`)
         setSlotarr(res.data.slots)
     }
 
@@ -68,7 +68,7 @@ const Booking = () => {
             setShowFrom(false)
             setIsBooked(true)
 
-            let waitTime = await axios.get(`https://vehicle-park.herokuapp.com/waiting-time/${id}`)
+            let waitTime = await axios.get(`https://repulsive-bell-bottoms-fawn.cyclic.app/waiting-time/${id}`)
             setSlotWaiting(waitTime.data['data']['waiting_time'])
 
         }
